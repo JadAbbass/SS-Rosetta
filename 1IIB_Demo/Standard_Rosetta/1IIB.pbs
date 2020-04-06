@@ -1,0 +1,13 @@
+#PBS -l nodes=16, walltime=100:00:00
+#PBS -N 1IIB_200
+
+. $MODULESHOME/init/bash
+
+module load gcc-4.6 openmpi-1.6.5 scons-2.2.0
+module load rosetta-3.4.0
+
+cd $PBS_O_WORKDIR
+
+mpirun -np 16  /shares/hpc/OS/sles/11_2/rosetta/3.4.0/SRC/rosetta_source/bin/AbinitioRelax.mpi.linuxgccrelease -in:file:fasta /home/k1064285/1IIB_200/1IIB.fasta -in:file:frag3 /home/k1064285/1IIB_200/aat000_03_05.200_v1_3 -in:file:frag9 /home/k1064285/1IIB_200/aat000_09_05.200_v1_3 -database $ROSETTA_DB -abinitio:relax -relax:fast -use_filters true -psipred_ss2 /home/k1064285/1IIB_200/t000_.psipred_ss2 -kill_hairpins /home/k1064285/1IIB_200/t000_.psipred_ss2 -nstruct 1250 -out:file:silent 1IIB_silent.out -out:path /home/k1064285/1IIB_200/ -mpi_tracer_to_file proc
+
+
