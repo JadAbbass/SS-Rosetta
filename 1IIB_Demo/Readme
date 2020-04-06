@@ -1,0 +1,10 @@
+Folder "fragments" contains three subfolders.
+
+In "Inputs", files needed to buidl fragment files using a local copy of fragment-picker.
+
+In "Standard_Fragments", the output (fragment files) of building fragments using the files in "Inputs" suitable for Standard Predictions.
+
+The three scripts found in this folder after executing them on the standard fragments produce the fragment files 
+found in folder "SS_Fragments".
+
+File "SS.docx" explains the positions used in the script files.
